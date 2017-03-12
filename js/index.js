@@ -117,7 +117,7 @@
 
       // 現在位置が最後のスライドの場合
       if (pagePrev < 0) {
-        pagePrev = MAX_LENGTH;
+        pagePrev = MAX_LENGTH - 1;
       }
       var now = element.find('li').eq(pageCurrent);
       var next = element.find('li').eq(pagePrev);
