@@ -27,13 +27,13 @@ button:focus{
   margin-right: auto;
   overflow: hidden;
 }
-.slide li{
+.slide-inner li{
   position: absolute;
   display: none;
   transition: all 1s;
   transition-property: all;
 }
-.slide li.current{
+.slide-inner li.current{
   display: block;
 }
 .button-prev{
@@ -59,4 +59,21 @@ button:focus{
   border: 0;
   background: url(../img/icon-arrow-next.png) 0 0 no-repeat;
   cursor: pointer;
+}
+.pager{
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.pager > li{
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+.pager > li.is-current{
+  background-color: #000081;
 }

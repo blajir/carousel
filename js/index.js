@@ -46,6 +46,27 @@
       });
     }
 
+    // ページャーセット関数
+    function pager () {
+      if (config.pager) {
+        var pagerTemplate = '<ul class="pager"><li class="is-current"></li>';
+        for (var i = 1; i < MAX_LENGTH; i++) {
+          pagerTemplate += '<li></li>';
+        }
+        pagerTemplate += '</ul>';
+        element.append(pagerTemplate);
+      }
+    }
+
+    // ページャー機能関数
+    function pagerCurrent (number) {
+      var $pager = $('.pager');
+      setTimeout(function () {
+        $pager.find('li').removeClass('is-current');
+        $pager.find('li').eq(number).addClass('is-current');
+      }, 1000);
+    }
+
     // ボタンセット関数
     function button () {
       if (config.button) {
@@ -64,18 +85,6 @@
         stopTimer();
         slidePrev(pageCurrent);
       });
-    }
-
-    // ページャーセット関数
-    function pager () {
-      if (config.pager) {
-        var pagerTemplate = '<ul class="pager"><li class="is-current"></li>';
-        for (var i = 1; i < MAX_LENGTH; i++) {
-          pagerTemplate += '<li></li>';
-        }
-        pagerTemplate += '</ul>';
-        element.append(pagerTemplate);
-      }
     }
 
     // スライダー関数
@@ -112,6 +121,9 @@
         });
         $('button').prop('disabled', false);
       }, 1800);
+
+      // ページャーの更新
+      pagerCurrent(pageNext);
 
       // 次のスライドをセット
       pageCurrent += 1;
@@ -156,6 +168,9 @@
         });
         $('button').prop('disabled', false);
       }, 1800);
+
+      // ページャーの更新
+      pagerCurrent(pagePrev);
 
       // 現在のスライドを更新
       pageCurrent = pagePrev;
