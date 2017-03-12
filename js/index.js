@@ -57,12 +57,12 @@
       var $buttonPrev = $('.button-prev');
       $buttonNext.on('click', function () {
         stopTimer();
-        slide();
-        slider();
+        slide(pageCurrent);
+        slider(pageCurrent);
       });
       $buttonPrev.on('click', function () {
         stopTimer();
-        slidePrev();
+        slidePrev(pageCurrent);
       });
     }
 
@@ -79,16 +79,16 @@
     }
 
     // スライダー関数
-    function slide () {
+    function slide (number) {
       $('button').prop('disabled', true);
       // 次のスライドを取得
-      var pageNext = pageCurrent + 1;
+      var pageNext = number + 1;
 
       // 現在位置が最後のスライドの場合
       if (pageNext >= MAX_LENGTH) {
         pageNext = 0;
       }
-      var now = element.find('li').eq(pageCurrent);
+      var now = element.find('li').eq(number);
       var next = element.find('li').eq(pageNext);
 
       // 次の画像をスライドする準備
@@ -123,16 +123,16 @@
     }
 
     // スライダープレビュー関数
-    function slidePrev () {
+    function slidePrev (number) {
       $('button').prop('disabled', true);
       // 次のスライドを取得
-      var pagePrev = pageCurrent - 1;
+      var pagePrev = number - 1;
 
       // 現在位置が最後のスライドの場合
       if (pagePrev < 0) {
         pagePrev = MAX_LENGTH - 1;
       }
-      var now = element.find('li').eq(pageCurrent);
+      var now = element.find('li').eq(number);
       var next = element.find('li').eq(pagePrev);
 
       // 次の画像をスライドする準備
@@ -164,13 +164,13 @@
       if (pageCurrent >= MAX_LENGTH) {
         pageCurrent = 0;
       }
-      slider();
+      slider(pageCurrent);
     }
 
     // スライドタイマー関数
-    function slider () {
+    function slider (number) {
       slideTimer = setInterval(function () {
-        slide();
+        slide(pageCurrent);
       }, slideSpeed);
     }
 
@@ -181,7 +181,7 @@
 
     // スライダーを実行
     (function init () {
-      slider();
+      slider(pageCurrent);
       button();
       pager();
       imageWidth();
