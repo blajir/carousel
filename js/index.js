@@ -9,7 +9,8 @@
     // デフォルト値
     var defs = {
       speed: 800,
-      button: true
+      button: true,
+      pager: true
     };
 
     // 渡されたオプションとデフォルト値をマージ
@@ -63,6 +64,18 @@
         stopTimer();
         slidePrev();
       });
+    }
+
+    // ページャーセット関数
+    function pager () {
+      if (config.pager) {
+        var pagerTemplate = '<ul class="pager"><li class="is-current"></li>';
+        for (var i = 1; i < MAX_LENGTH; i++) {
+          pagerTemplate += '<li></li>';
+        }
+        pagerTemplate += '</ul>';
+        element.append(pagerTemplate);
+      }
     }
 
     // スライダー関数
