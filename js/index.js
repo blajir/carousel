@@ -160,8 +160,6 @@
       // 現在のスライドを更新
       pageCurrent = pagePrev;
 
-//      pageCurrent += 1;
-
       // 現在位置が最後のスライドの場合
       if (pageCurrent >= MAX_LENGTH) {
         pageCurrent = 0;
@@ -182,9 +180,12 @@
     }
 
     // スライダーを実行
-    slider();
-    button();
-    imageWidth();
+    (function init () {
+      slider();
+      button();
+      pager();
+      imageWidth();
+    }());
 
     // 要素を返す
     return this;
