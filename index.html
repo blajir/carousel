@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>carousel</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+</head>
+<body>
+  <h1>auto carousel</h1>
+  <div class="slide">
+    <ul>
+      <li class="current">
+        <img src="http://placehold.jp/250x50.png?text=ダミー1" alt="">
+      </li>
+      <li>
+        <img src="http://placehold.jp/250x50.png?text=ダミー2" alt="">
+      </li>
+      <li>
+        <img src="http://placehold.jp/250x50.png?text=ダミー3" alt="">
+      </li>
+      <li>
+        <img src="http://placehold.jp/250x50.png?text=ダミー4" alt="">
+      </li>
+    </ul>
+  </div>
+  <script>
+    $(function () {
+      $('.slide').slide({ //対象のDOM
+        speed: '2000',
+        button: true
+      });
+    });
+  </script>
+</body>
+</html>
