@@ -1,5 +1,23 @@
+h1{
+  margin: 20px 0 30px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+p{
+  margin: 0 0 30px;
+  text-align: center;
+}
 img{
   vertical-align: bottom;
+}
+button{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+button:focus{
+  outline: 0;
 }
 .slide{
   position: relative;
@@ -9,41 +27,36 @@ img{
   margin-right: auto;
   overflow: hidden;
 }
-
 .slide li{
   position: absolute;
-/*  top: 0;*/
-/*  left: 0;*/
   display: none;
-/*
-  width: 100%;
-  height: 100%;
-*/
   transition: all 1s;
   transition-property: all;
 }
-
 .slide li.current{
   display: block;
 }
-
-.slide li img{
-/*
-  width: 100vw;
-  height: 100vmin;
-*/
-}
-
 .button-prev{
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   z-index: 1;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  border: 0;
+  background: url(../img/icon-arrow-prev.png) 0 0 no-repeat;
+  cursor: pointer;
 }
-
 .button-next{
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
   z-index: 1;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  border: 0;
+  background: url(../img/icon-arrow-next.png) 0 0 no-repeat;
+  cursor: pointer;
 }
