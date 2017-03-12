@@ -202,6 +202,23 @@
       imageWidth();
     }());
 
+    // ページャーをクリックした時
+    // var $pagerItem = $('.pager li');
+    // $('.pager li').on('click', function () {
+    //   var pagerIndex = $(this).index();
+    //   setTimeout(function () {
+    //     $pagerItem.removeClass('is-current');
+    //     $pagerItem.eq(pagerIndex).addClass('is-current');
+    //   }, 1000);
+    //   stopTimer();
+    //   if (pagerIndex > pageCurrent) {
+    //     slide(pagerIndex - 1);
+    //     slider(pagerIndex);
+    //   } else {
+    //     slidePrev(pagerIndex);
+    //   }
+    // });
+
     // 要素を返す
     return this;
   };

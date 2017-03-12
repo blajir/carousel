@@ -70,9 +70,15 @@ button:focus{
   display: inline-block;
   width: 8px;
   height: 8px;
+  padding: 5px;
   border-radius: 8px;
   background-color: #fff;
   margin-left: 10px;
+  /*cursor: pointer;*/
+  box-sizing: border-box;
+}
+.pager > li:first-child{
+  margin-left: 0;
 }
 .pager > li.is-current{
   background-color: #000081;
