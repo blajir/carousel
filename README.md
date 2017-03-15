@@ -1,29 +1,27 @@
 # carousel
 シンプルなカルーセルのプラグイン
 
-##概要
+## 概要
 自動スライドするカルーセル用のプラグインです。
 
-##使い方
-###HTML
+## 使い方
+### HTML
     <div class="slide">
       <ul class="slide-inner">
         <li class="current">
-          <img src="http://placehold.jp/640x340.png?text=ダミー1" alt="">
+          ...
         </li>
         <li>
-          <img src="http://placehold.jp/640x340.png?text=ダミー2" alt="">
+          ...
         </li>
         <li>
-          <img src="http://placehold.jp/640x340.png?text=ダミー3" alt="">
-        </li>
-        <li>
-          <img src="http://placehold.jp/640x340.png?text=ダミー4" alt="">
+          ...
         </li>
       </ul>
     </div>
+
   
-###script
+### script
     $('.slide').slide({ //対象のDOM
       speed: '5000',
       button: true,
